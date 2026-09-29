@@ -94,7 +94,7 @@ details a { color: var(--accent); }
 
 #status { margin-top: 20px; color: var(--muted); }
 #status.error { color: #ff6b6b; }
-
+#result[hidden] { display: none; }
 #result { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 .actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 
