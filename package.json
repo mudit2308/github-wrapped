@@ -1,0 +1,11 @@
+{
+  "name": "github-wrapped",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Spotify Wrapped-style card for any GitHub user.",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "test": "node --test"
+  }
+}

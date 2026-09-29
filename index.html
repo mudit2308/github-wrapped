@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub Wrapped</title>
+    <meta name="description" content="Your year on GitHub, wrapped: top languages, busiest hours, streaks and your coding persona." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    <script type="module" src="src/app.js"></script>
+    <script type="module" src="src/background.js"></script>
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="bg-blob one"></div>
+      <div class="bg-blob two"></div>
+      <div class="bg-blob three"></div>
+      <div class="bg-grid" id="bg-grid"></div>
+    </div>
+    <main>
+      <section class="intro">
+        <div class="badge">✦ Your year in code</div>
+        <h1><span class="word">GitHub</span> <span class="word accent">Wrapped</span></h1>
+        <p class="tagline">Top languages, busiest hours, streaks and your coding persona, played as a story and wrapped into a card you can share.</p>
+
+        <form id="wrap-form" autocomplete="off">
+          <div class="field">
+            <span class="at">@</span>
+            <input id="username" name="username" placeholder="github username" aria-label="GitHub username" required />
+            <button type="submit">Wrap it</button>
+          </div>
+          <details>
+            <summary>Want full-year stats? Add a token (optional)</summary>
+            <p>
+              Without a token, stats come from your last ~90 days of public activity. A
+              <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">fine-grained token</a>
+              with no extra permissions unlocks your full contribution calendar. It's only sent to GitHub and never stored.
+            </p>
+            <input id="token" type="password" placeholder="github_pat_…" aria-label="GitHub token" />
+          </details>
+        </form>
+        <div id="loader" class="loader" hidden>
+          <div class="loader-grid">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <span class="loader-text" aria-live="polite"></span>
+        </div>
+        <p id="status" role="status" hidden></p>
+      </section>
+
+      <section id="result" hidden>
+        <div id="card" class="card"></div>
+        <div class="actions">
+          <button id="download">Download PNG</button>
+          <button id="linkedin" class="secondary">Share on LinkedIn</button>
+          <button id="copy-link" class="secondary">Copy link</button>
+          <button id="replay" class="secondary">↻ Replay story</button>
+        </div>
+      </section>
+    </main>
+    <footer class="site-foot">
+      Uses the public GitHub API. Not affiliated with GitHub or Spotify.
+    </footer>
+  </body>
+</html>
